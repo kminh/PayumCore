@@ -4,21 +4,13 @@
                         xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
                         http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
 
-    <mapped-superclass name="Payum\Core\Model\Payment">
+    <mapped-superclass name="Payum\Core\Model\GatewayConfig">
 
-        <field name="number" type="string" />
+        <field name="gatewayName" type="string" />
 
-        <field name="description" type="string" />
+        <field name="factoryName" type="string" />
 
-        <field name="clientEmail" type="string" />
-
-        <field name="clientId" type="string" />
-
-        <field name="totalAmount" type="int" />
-
-        <field name="currencyCode" type="string" />
-
-        <field name="details" type="object" />
+        <field name="config" type="hash" />
 
     </mapped-superclass>
 
