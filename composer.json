@@ -86,7 +86,8 @@
     "target-dir": "Payum/Core",
     "extra": {
         "branch-alias": {
-            "dev-master": "0.15-dev"
+            "dev-master": "1.0-dev",
+            "0.15.x-dev": "0.15.1-dev"
         }
     }
 }

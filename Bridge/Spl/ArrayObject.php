@@ -40,6 +40,17 @@ class ArrayObject extends \ArrayObject
             throw new InvalidArgumentException('Invalid input given. Should be an array or instance of \Traversable');
         }
 
+        // temp workaround for \Stripe_Error where 'code' is mangled after
+        // execution
+        if (isset($input['error']['code'])) {
+            $input['error']['code'] = (string) $input['error']['code'];
+        }
+
+        // if no error is set, but current data has error, remove them
+        if (!isset($input['error']) && isset($this['error'])) {
+            unset($this['error']);
+        }
+
         foreach ($input as $index => $value) {
             $this[$index] = $value;
         }
